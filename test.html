@@ -1,0 +1,105 @@
+<style>
+  .card-vpn {
+    --bg: linear-gradient(135deg,#101827,#0b1220);
+    --border: rgba(255,255,255,.08);
+    --accent: #5eead4; /* teal */
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --shadow: 0 12px 30px rgba(0,0,0,.25);
+    position: relative;
+    border-radius: 20px;
+    padding: 22px;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .card-vpn::after{
+    content:"";
+    position:absolute; inset:-2px;
+    background: radial-gradient(600px 200px at 120% -10%, rgba(94,234,212,.18), transparent 60%);
+    pointer-events:none;
+  }
+  .card-vpn:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0,0,0,.3); }
+
+  .card-vpn h3{
+    margin:0 0 6px; font-size:18px; letter-spacing:.3px; font-weight:700;
+    display:flex; align-items:center; gap:8px;
+  }
+
+  .card-vpn .price{
+    display:flex; align-items:baseline; gap:8px;
+    margin:4px 0 14px;
+    font-weight:800;
+  }
+  .card-vpn .price .amount{ font-size:28px; line-height:1; }
+  .card-vpn .price span{ color:var(--muted); font-size:13px; }
+
+  .card-vpn ul{
+    list-style:none; padding:0; margin:0 0 16px; display:grid; gap:8px;
+  }
+  .card-vpn li{
+    display:flex; align-items:center; gap:10px; font-size:14px; color:#cbd5e1;
+    padding:8px 10px; border:1px dashed var(--border); border-radius:12px;
+    background: rgba(15,23,42,.35);
+  }
+  .card-vpn li .tick{
+    width:18px; height:18px; border-radius:6px; display:grid; place-items:center;
+    background: rgba(94,234,212,.15); color:var(--accent); font-size:12px; font-weight:900;
+    border: 1px solid rgba(94,234,212,.35);
+  }
+
+  /* Làm nổi bật dòng Mở khóa MXH */
+  .card-vpn li.highlight {
+    border: 1px solid var(--accent);
+    background: rgba(94,234,212,.2);
+    color: #ffffff;
+    font-weight: 700;
+    animation: blink 1.2s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { background: rgba(94,234,212,.2); }
+    50% { background: rgba(94,234,212,.35); }
+  }
+
+  .card-vpn .btn-guide{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    width:100%; padding:11px 14px; border-radius:12px; text-decoration:none;
+    color:#0f172a; background:var(--accent); font-weight:800; font-size:14px;
+    transition: filter .18s ease, transform .18s ease;
+  }
+  .card-vpn .btn-guide:hover{ filter: brightness(1.08); transform: translateY(-1px); }
+
+  /* Nhỏ gọn hơn trên màn nhỏ */
+  @media (max-width:480px){
+    .card-vpn{ padding:18px; }
+    .card-vpn .price .amount{ font-size:24px; }
+  }
+</style>
+
+<div class="card-vpn">
+  <h3>VPN NGA PRO</h3>
+  <p style="margin:4px 0 12px; font-size:13px; color:#94a3b8; font-weight:500;">
+    Gói VPN dùng cho khách hàng ở Nga
+  </p>
+
+  <div class="price">
+    <div class="amount">65.000 VNĐ</div>
+    <span>/ tháng</span>
+  </div>
+
+  <ul>
+    <li><span class="tick">✓</span> Dung lượng <strong>3000GB/tháng</strong></li>
+    <li><span class="tick">✓</span> Tốc độ tối đa <strong>100–500Mbps</strong></li>
+    <li><span class="tick">✓</span> Giới hạn <strong>3 thiết bị</strong></li>
+    <li><span class="tick">✓</span> Cân bằng tải - Đảm bảo sự ổn định </li>
+    <li class="highlight"><span class="tick">✓</span> Mở khóa tất cả Mạng Xã Hội </li>
+    <li><span class="tick">✓</span> Máy chủ <strong>10Gbps</strong></li>
+    <li><span class="tick">✓</span> Hỗ trợ <strong>iOS, Android, macOS, Windows</strong></li>
+  </ul>
+
+  <a href="#" target="_blank" class="btn-guide">Hướng dẫn sử dụng</a>
+</div>
